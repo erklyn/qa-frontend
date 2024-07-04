@@ -9,7 +9,7 @@ export type Question = {
 };
 
 async function getLectureQuestions(slug: string): Promise<Question[]> {
-    const url = `http://localhost:3000/${slug}`;
+    const url = `http://localhost:3001/${slug}`;
     try {
         const response = await fetch(url, { cache: "no-cache" });
         if (!response.ok) {
@@ -24,7 +24,7 @@ async function getLectureQuestions(slug: string): Promise<Question[]> {
 }
 
 async function getLecture(slug: string): Promise<Lecture | undefined> {
-    const url = `http://localhost:3000/lecture/${slug}`;
+    const url = `http://localhost:3001/lecture/${slug}`;
     try {
         const response = await fetch(url, { cache: "no-cache" });
         if (!response.ok) {
@@ -40,7 +40,7 @@ async function getLecture(slug: string): Promise<Lecture | undefined> {
 }
 
 async function sendQuestion(lecture: string, q: Question): Promise<boolean> {
-    const url = `http://localhost:3000/${lecture}`;
+    const url = `http://localhost:3001/${lecture}`;
     try {
         const response = await fetch(url, {
             headers: {

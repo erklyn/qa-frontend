@@ -6,7 +6,7 @@ export type Lecture = {
 };
 
 async function getLectures(): Promise<Lecture[]> {
-  const url = `http://localhost:3000/lectures`;
+  const url = `http://localhost:3001/lectures`;
   try {
     const response = await fetch(url, { cache: "no-cache" });
     if (!response.ok) {
